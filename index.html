@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, maximum-scale=1.0, user-scalable=no">
+	<title>PerfecTwinにお任せください</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+		@font-face {
+			font-family:"LG Smart";
+			font-weight:700;
+			src:local("LGSmHaB"), url("https://storage.googleapis.com/lgcns-eloqua-bucket/eloquafonts/lgfont/LGSmart_SemiBold.woff") format("woff");
+		}
+		@font-face {
+			font-family:"LG Smart";
+			font-weight:300;
+			src:local("LGSmHaR"), url("https://storage.googleapis.com/lgcns-eloqua-bucket/eloquafonts/lgfont/LGSmart_Regular.woff") format("woff");
+		}
+		@font-face {
+			font-family:"LG Smart";
+			font-weight:800;
+			src:local("LGSmHaSB"), url("https://storage.googleapis.com/lgcns-eloqua-bucket/eloquafonts/lgfont/LGSmart_Bold.woff") format("woff");
+		}
+
+		body {
+			/*font-family:sans-serif;*/
+			/*font-family:'LG Smart', 'Noto Sans KR', sans-serif;*/
+			font-family:'Noto Sans JP', 'Noto Sans KR', sans-serif;
+			color:#000; font-size:20px; line-height:130%; vertical-align:top; font-weight:500; letter-spacing:-0.08em;
+			padding:0px; margin:0px; 
+		}
+		html {
+			overflow-y:scroll;
+		}
+		html, body {
+			width:100%;
+		}
+		div, p, ul, li,ol, table, th, td, textarea, input, span, form, h1, h2, h3, h4, h5, h6, dt, dl, dd, em, sup {
+			padding:0px; margin:0px; 
+		}
+		ul, ol, dl, dd, dt, li {
+			list-style-type:none;
+		}
+		a { text-decoration: none; }
+		a:hover { color:inherit; }
+		a:link { color:inherit; }
+		a:visited { color:inherit; }
+		legend {
+			display:none; position:absolute; visibility:hidden;
+		}
+		caption {
+			visibility:hidden; width:0px; height:0px; overflow:hidden; font-size:0px; margin:0px; padding:0px; line-height:0px;
+		}
+		img {
+			border:0; vertical-align:middle; outline:none;
+		}
+		b {
+			font-weight:800;
+		}
+
+		.clear:after{content:''; display:block; clear:both;}
+		.inner {
+			width:1320px; margin:0 auto; position:relative; box-sizing:border-box;
+		}
+		.btnarea a {
+			display:inline-block;
+			background:url('./images/icon_arrow_red.png') no-repeat 94% center;
+		}
+		br.hbr { display:none; }		
+		br.web { display:block; }
+		br.mobile { display:none; }
+
+		header {
+			background: rgb(230,13,65);
+			background: linear-gradient(180deg, rgba(230,13,65,1) 0%, rgba(231,23,58,1) 100%);
+		}
+		header .bg {
+			background:url('./images/top_bg.jpg') no-repeat right center;
+		}
+		header .inner {
+			padding:85px 0 75px 70px;
+		}
+		header .logo_area {
+		}
+		header .main_title {
+			margin-top:70px;
+			font-size:32px; color:#ffffff; line-height:130%; font-weight:700; letter-spacing:-0.09em; text-shadow:0 0 5px #ffffff;
+		}
+		header .main_title h1 {	
+			margin-top:20px;
+			font-size:52px; font-weight:800; line-height:1.1em; 
+		}
+		header .main_title h1 span {	
+			font-size:0.7em; font-weight:500;
+		}
+		header .detail {
+			margin-top:80px;
+			font-size:24px; color:#ffffff; line-height:160%; font-weight:400; 
+		}
+		header .btnarea {
+			margin-top:75px;
+		}
+		header .btnarea a {
+			background-color:#ffffff; padding:0 2.8em; transition-duration:0.35s; border-radius:0.2em;
+			color:#e6103f; font-size:24px; font-weight:700; line-height:3.6em;
+		}
+
+
+		.section {
+			width:100%; position:relative;
+		}
+
+
+		/* section2 */
+		.section2 {
+			background-color:#ffffff;
+		}
+		.section2 .inner {
+			padding:85px 0 75px; text-align:center;
+		}
+		.section2 .slist {
+			width:90%; margin:0 auto;
+		}
+		.section2 .slist ul {
+			display:inline-block; width:100%;
+		}
+		.section2 .slist ul li {
+			float:left; width:32%; margin-right:2%;
+		}
+		.section2 .slist ul li:last-child {
+			margin-right:0;
+		}
+		.section2 .slist .box {
+			width:100%; border:2px solid #eb613b; border-radius:10px; padding:25px 0; box-sizing:border-box;
+		}
+		.section2 .slist .box .icon {
+		}
+		.section2 .slist .box .info {
+			margin-top:10px;
+			color:#ea613b; font-size:24px; line-height:140%;
+		}
+		.section2 .slist .box_red {
+			border:2px solid #e50048;
+		}
+		.section2 .slist .box_red .info {
+			color:#e4004a;
+		}
+
+		.section2 .btnarea_helf {
+			width:90%; margin:45px auto 0;
+		}
+		.section2 .btnarea_helf a,
+		.section2 .btnarea a {
+			display:inline-block; width:48%; border-radius:10px;
+			color:#ffffff; font-size:24px; font-weight:800; line-height:85px; 
+			background:#ff6600 url('./images/icon_arrow.png') no-repeat 94% center;
+		}
+		.section2 .btnarea_helf a:last-child {
+			margin-left:2%;
+		}
+		.section2 .btnarea {
+			margin-top:65px;
+		}
+		.section2 .btnarea a {
+			width:30%;
+			background:#e5004a url('./images/icon_arrow.png') no-repeat 94% center;
+		}
+
+
+
+		/* section3 */
+		.section3 {
+			background-color:#e5e5e5;
+		}
+		.section3 .inner {
+			padding:55px 0 50px; text-align:center;
+		}
+		.section3 .banner_list {
+			width:90%; margin:0 auto; display:table;
+		}
+		.section3 .banner_list .banner_box {
+			display:table-cell; box-sizing:border-box; vertical-align:middle; 
+			background:#ffffff; border:1px solid #d1d1d1; border-radius:10px;
+		}
+		.section3 .banner_list .banner1 {
+			width:65.7%; padding:40px 0 30px;
+		}
+		.section3 .banner_list .banner1 .stitle {
+			font-size:27px; font-weight:800; line-height:1;
+		}
+		.section3 .banner_list .banner1 .title {
+			margin-top:25px;
+		}
+		.section3 .banner_list .banner1 .info {
+			margin-top:20px;
+			font-size:25px; font-weight:500;
+		}
+		.section3 .banner_list .banner1 .info .date {
+		}
+		.section3 .banner_list .banner1 .info .location {
+			margin-left:0.7em;
+		}
+		.section3 .banner_list .banner1 .info .date img, 
+		.section3 .banner_list .banner1 .info .location img {
+			transform:translate(0, -10%);
+		}
+		.section3 .banner_list .banner1 .detail {
+			width:90%; margin:20px auto 0; border-top:3px solid #d6d6d6; padding-top:17px;
+			font-size:21px; font-weight:800; letter-spacing:-0.06em; line-height:140%;
+		}
+		.section3 .banner_list .banner1 .detail .fcred {
+			color:#e5004a; font-size:25px;
+		}
+		.section3 .banner_list .banner2 {
+			width:31.7%; padding:20px 0 15px;
+		}
+		.section3 .banner_list .banner2 .img {
+		}
+		.section3 .banner_list .banner2 .info {
+			margin-top:10px;
+			font-size:20px; font-weight:700; line-height:130%;
+		}
+
+		.section3 .banner_list .banner_space {
+			width:2.6%; border:0; background:none;;
+		}
+
+
+
+		/* section4 */
+		.section4 {
+			background-color:#ffe7e7;
+		}
+		.section4 .inner {
+			padding:100px 0 120px; text-align:center;
+		}
+		.section4 .item_list {
+			width:90%; margin:0 auto; 
+		}
+		.section4 .item_list dl {
+			width:100%; display:table; margin-bottom:60px;
+		}
+		.section4 .item_list dl:last-child {
+			margin-bottom:0px;
+		}
+		.section4 .item_list dl dt {
+			display:table-cell; width:14%; text-align:left; vertical-align:middle;
+		}
+		.section4 .item_list dl dd {
+			display:table-cell; width:86%; text-align:left; vertical-align:middle;
+		}
+		.section4 .item_list dl dd .tit {
+			font-size:30px; font-weight:800; letter-spacing:-0.09em; line-height:120%;
+		}
+		.section4 .item_list dl dd .info {
+			margin-top:10px; border-top:2px solid #9d9d9d; padding-top:14px;
+			font-size:24px; font-weight:500; letter-spacing:-0.1em; line-height:120%;
+		}
+		.section4 .card_list {
+			width:90%; margin:90px auto 0; display:inline-block;
+		}
+		.section4 .card_list .card_box {
+			float:left; width:49%; margin-right:2%;
+			box-sizing:border-box; background:#ffffff; border:2px solid #e5004a; border-radius:10px;
+		}
+		.section4 .card_list .card_box2 {
+			margin-right:0; border:2px solid #ed6d00;
+		}
+		.section4 .card_list .card_box .title {
+			padding:25px 0;
+			color:#5c0107; font-size:40px; font-weight:800; line-height:120%;
+		}
+		.section4 .card_list .card_box .detail {
+			width:100%; 
+		}
+		.section4 .card_list .card_box1 .detail {
+			background:#e5004a;	
+		}
+		.section4 .card_list .card_box2 .detail {
+			background:#ed6d00;
+		}
+		.section4 .card_list .card_box .detail dl {
+			width:94%; display:table; margin:0 auto;
+			color:#ffffff; border-bottom:1px solid #ffffff;
+		}
+		.section4 .card_list .card_box .detail dl:last-child {
+			border-bottom:0; padding-bottom:20px;
+		}
+		.section4 .card_list .card_box .detail dl dt {
+			display:table-cell; width:20%; vertical-align:middle;
+			padding:30px 0 25px;
+		}
+		.section4 .card_list .card_box .detail dl dt img {
+			display:block; margin:0 auto;
+		}
+		.section4 .card_list .card_box .detail dl dt .tit {
+			display:inline-block; margin-top:8px; padding:0 0.5em; background:#ffffff; border-radius:1.5em;
+			font-size:16.2px; font-weight:700; line-height:130%;
+		}
+		.section4 .card_list .card_box1 .detail dl dt .tit {
+			color:#e5004a;	
+		}
+		.section4 .card_list .card_box2 .detail dl dt .tit {
+			color:#ed6d00;
+		}
+		.section4 .card_list .card_box .detail dl dd {
+			display:table-cell; width:80%; text-align:left; vertical-align:middle;
+			font-size:20px; font-weight:600; line-height:135%; letter-spacing:-0.085em;
+		}
+
+
+
+
+		/* footer */
+		.footer {
+			background:url('./images/footer_bg.jpg') no-repeat center center; background-size:cover;
+		}
+		.footer .inner {
+			padding:70px 0 50px; text-align:center;
+			color:#ffffff;
+		}
+		.footer .txt {
+			font-size:32px; font-weight:500; line-height:130%;
+		}
+		.footer .tit {
+			margin-top:30px;
+			font-size:60px; font-weight:800; line-height:1; letter-spacing:-0.09em;
+		}
+		.footer .btnarea {
+			margin-top:50px;
+		}
+		.footer .btnarea a {
+			display:inline-block; border-radius:10px; padding:0 1.8em;
+			color:#ffffff; font-size:26px; font-weight:800; line-height:85px; 
+			background:#e5004a url('./images/icon_arrow.png') no-repeat 94% center;
+		}
+		.footer .copyright {
+			margin-top:40px;
+			font-size:22px; font-weight:500; line-height:130%; 
+		}
+		.footer .copyright em {
+			margin:0 0.5em; font-style:normal;
+		}
+
+
+
+
+
+		@media only screen and (max-width: 1320px) {
+			.inner {
+				width:100%;
+			}
+
+			/* section2 */
+			.section2 .slist {
+				min-width:1160px;
+			}
+		}
+
+
+
+		@media only screen and (max-width: 1220px) {	
+			/* section2 */
+			.section2 .slist {
+				width:98%; min-width:unset;
+			}
+			.section2 .slist .box {
+				width:370px; margin:0 auto;
+			}
+
+			/* section3 */
+			.section3 .banner_list {
+				width:98%;
+			}
+
+			
+			/* section4 */
+			.section4 .item_list {
+				width:98%;
+			}
+			.section4 .card_list {
+				width:98%;
+			}
+		}
+
+
+		@media only screen and (max-width: 1180px) {		
+			/* section2 */
+			.section2 .slist ul li {
+				width:49%;
+			}
+			.section2 .slist ul li:nth-child(1) {
+				width:100%; margin-bottom:30px;
+			}
+			.section2 .slist ul li:nth-child(3) {
+				margin-right:0;
+			}
+
+			/* section3 */	
+			.section3 .banner_list .banner1 {
+				width:66.7%;
+			}
+			.section3 .banner_list .banner1 .title img {
+				width:94%;
+			}
+			.section3 .banner_list .banner2 {
+				width:32.7%;
+			}
+			.section3 .banner_list .banner2 .img img {
+				width:94%;
+			}
+			.section3 .banner_list .banner_space {
+				width:0.6%;
+			}
+
+			/* section4 */
+			.section4 .card_list .card_box .detail dl dd {
+				padding:0.5em 0;
+			}
+		}
+
+
+		@media only screen and (max-width: 960px) {	
+			br.hbr { display:block; }
+			header .main_title h1 {
+				line-height:110%;
+			}
+		}
+
+
+		@media only screen and (max-width: 980px) {	
+			
+			/* section3 */	
+			.section3 .banner_list {
+				display:inline-block;
+			}
+			.section3 .banner_list .banner_box {
+				display:block; margin:0.5em 0;
+			}
+			.section3 .banner_list .banner1 {
+				width:100%;
+			}
+			.section3 .banner_list .banner1 .title img {
+				width:unset;
+			}
+			.section3 .banner_list .banner2 {
+				width:100%;
+			}
+			.section3 .banner_list .banner2 .img img {
+				width:unset;
+			}
+			.section3 .banner_list .banner_space {
+				display:none;
+			}
+
+
+			/* section4 */	
+			.section4 .item_list {
+				width:94%;
+			}	
+			.section4 .item_list dl {
+				display:block;
+			}
+			.section4 .item_list dl dt {
+				display:block; width:100%; text-align:center;
+			}
+			.section4 .item_list dl dd {
+				display:block; width:100%; margin-top:0.8em;
+			}
+
+			/* footer */	
+			.footer .copyright {
+				font-size:20px;
+			}
+		}
+
+
+
+		@media only screen and (max-width: 930px) {
+			.inner {
+				width:94%; 
+			}	
+			.btnarea a {
+				background:url('./images/icon_arrow_red.png') no-repeat 94% center; background-size:1.6129vw auto;
+			}
+
+			header .inner {
+				padding:9.1398vw 0 8.0645vw 0;
+			}	
+			header .bg {
+				background:url('./images/top_bg.jpg') no-repeat right center; background-size:auto 100%;
+			}
+			header .main_title {
+				margin-top:7.5269vw;
+				font-size:3.6559vw; text-shadow:0 0 0.5376vw #ffffff;
+			}
+			header .main_title h1 {	
+				margin-top:2.1505vw;
+				font-size:6.8817vw; 
+			}
+			header .detail {
+				margin-top:8.6022vw;
+				font-size:2.5806vw; 
+			}
+			header .btnarea {
+				margin-top:8.0645vw;
+			}
+			header .btnarea a {
+				font-size:2.5806vw; 
+			}	
+			header .logo_area img {
+				width:17.7419vw;
+			}
+
+			
+
+			/* section2 */
+			.section2 .inner {
+				padding:9.1398vw 0 8.0645vw; 
+			}
+			.section2 .slist ul li:nth-child(1) {
+				margin-bottom:3.2258vw;
+			}
+			.section2 .slist .box {
+				width:100%; border-radius:1.0753vw; padding:2.6882vw 0;
+			}
+			.section2 .slist .box .icon img {
+				width:14.7312vw;
+			}
+			.section2 .slist .box .info {
+				margin-top:1.0753vw;
+				font-size:2.5806vw;
+			}
+			.section2 .btnarea_helf {
+				width:100%; margin:4.8387vw auto 0;
+			}
+			.section2 .btnarea_helf a,
+			.section2 .btnarea a {
+				border-radius:1.0753vw;
+				font-size:2.5806vw; line-height:9.1398vw; 
+				background:#ff6600 url('./images/icon_arrow.png') no-repeat 94% center; background-size:1.6129vw auto;
+			}
+			.section2 .btnarea {
+				margin-top:6.9892vw;
+			}
+			.section2 .btnarea a {
+				width:40%;
+				background:#e5004a url('./images/icon_arrow.png') no-repeat 94% center; background-size:1.6129vw auto;
+			}
+
+
+			
+			/* section3 */
+			.section3 .inner {
+				padding:5.9140vw 0 5.3763vw;
+			}
+			.section3 .banner_list .banner_box {
+				border-radius:1.0753vw;
+			}
+			.section3 .banner_list .banner1 {
+				padding:4.3011vw 0 3.2258vw;
+			}
+			.section3 .banner_list .banner1 .stitle {
+				font-size:2.9032vw;
+			}
+			.section3 .banner_list .banner1 .title {
+				margin-top:2.6882vw;
+			}
+			.section3 .banner_list .banner1 .title img {
+				width:72.0430vw;
+			}
+			.section3 .banner_list .banner1 .info {
+				margin-top:2.1505vw;
+				font-size:2.6882vw;
+			}
+			.section3 .banner_list .banner1 .info .date img, 
+			.section3 .banner_list .banner1 .info .location img {
+				
+			}
+			.section3 .banner_list .banner1 .detail {
+				width:90%; margin:2.1505vw auto 0; padding-top:1.8280vw;
+				font-size:2.2581vw;
+			}
+			.section3 .banner_list .banner1 .detail .fcred {
+				font-size:2.6882vw;
+			}
+			.section3 .banner_list .banner2 {
+				padding:2.1505vw 0 1.6129vw;
+			}
+			.section3 .banner_list .banner2 .img img {
+				width:36.5591vw;
+			}
+			.section3 .banner_list .banner2 .info {
+				margin-top:1.0753vw;
+				font-size:2.1505vw;
+			}
+
+			
+			/* section4 */
+			.section4 .inner {
+				padding:10.7527vw 0 12.9032vw;
+			}
+			.section4 .item_list {
+				width:100%; 
+			}
+			.section4 .item_list dl {
+				margin-bottom:6.4516vw;
+			}
+			.section4 .item_list dl dt img {
+				width:14.6237vw;
+			}
+			.section4 .item_list dl dd .tit {
+				font-size:2.7059vw;
+			}
+			.section4 .item_list dl dd .info {
+				margin-top:1.0753vw; padding-top:1.5054vw;
+				font-size:2.0806vw; 
+			}
+			.section4 .card_list {
+				width:100%; margin:9.6774vw auto 0;
+			}
+			.section4 .card_list .card_box {
+				float:unset; width:100%;
+				border-radius:1.0753vw;
+			}
+			.section4 .card_list .card_box .title {
+				padding:2.6882vw 0;
+				font-size:4.3011vw;
+			}
+			.section4 .card_list .card_box .detail dl {
+				width:94%;
+			}
+			.section4 .card_list .card_box .detail dl:last-child {
+				padding-bottom:2.1505vw;
+			}
+			.section4 .card_list .card_box .detail dl dt {
+				width:25%;
+				padding:3.2258vw 0 2.6882vw;
+			}
+			.section4 .card_list .card_box .detail dl dt img.icon_h1 {
+				width:7.3438vw;
+			}
+			.section4 .card_list .card_box .detail dl dt img.icon_h2 {
+				width:8.5938vw;
+			}
+			.section4 .card_list .card_box .detail dl dt .tit {
+				margin-top:0.8602vw;
+				font-size:0.65em;
+			}
+			.section4 .card_list .card_box .detail dl dd {
+				width:75%;
+				font-size:2.1505vw;
+			}
+			.section4 .card_list .card_box2 {
+				margin-top:3vw;
+			}
+
+			
+			/* footer */
+			.footer .inner {
+				padding:7.5269vw 0 5.3763vw;
+			}
+			.footer .txt {
+				font-size:3.4409vw;
+			}
+			.footer .tit {
+				margin-top:3.2258vw;
+				font-size:6.4516vw; 
+			}
+			.footer .btnarea {
+				margin-top:5.3763vw;
+			}
+			.footer .btnarea a {
+				border-radius:1.0753vw;
+				font-size:2.7957vw; line-height:9.1398vw; 
+				background:#e5004a url('./images/icon_arrow.png') no-repeat 94% center; background-size:1.6129vw auto;
+			}
+			.footer .copyright {
+				margin-top:4.3011vw;
+				font-size:2.1505vw;
+			}
+
+		}
+
+
+
+
+		@media only screen and (max-width: 480px) {
+			/* 이미지 640으로 맞춤 */
+			.inner {
+				width:96%; 
+			}	
+			.btnarea a {
+				background:url('./images/icon_arrow_red.png') no-repeat 94% center; background-size:2.3438vw auto;
+			}	
+			br.web { display:none; }
+			br.mobile { display:block; }
+			header .inner {
+				padding:2em 0 2em 1em;
+			}
+			header .bg {
+				background: rgb(230,13,65);
+				background: linear-gradient(135deg, rgba(230,13,65,1) 0%, rgba(233,58,35,1) 50%, rgba(237,104,4,1) 100%);
+			}
+			header .logo_area img {
+				width:25.7813vw;
+			}
+			header .main_title {
+				margin-top:10.9375vw;
+				font-size:4.4250vw; text-shadow:0 0 0.2em #ffffff;
+			}
+			header .main_title h1 {	
+				margin-top:3.1250vw;
+				font-size:7.4250vw; line-height:120%;
+			}
+			header .detail {
+				margin-top:12.5000vw;
+				font-size:0.85em;
+			}
+			header .btnarea {
+				margin-top:11.7188vw;
+			}
+			header .btnarea a {
+				padding:0 1.8em;
+				font-size:0.9em; 
+			}
+
+
+
+			/* section2 */
+			.section2 .slist ul li {
+				width:100%;
+			}
+			.section2 .slist ul li:nth-child(1),
+			.section2 .slist ul li:nth-child(2) {
+				margin-bottom:0.5em;
+			}
+			.section2 .slist .box .info {
+				font-size:1em;
+			}
+			.section2 .btnarea_helf a, .section2 .btnarea a {
+				width:100%; font-size:0.9em; line-height:2.8em;
+			}
+			.section2 .btnarea_helf a {
+				background:#ff6600 url('./images/icon_arrow.png') no-repeat 94% center; background-size:2.3438vw auto;
+			}
+			.section2 .btnarea a {
+				background:#e5004a url('./images/icon_arrow.png') no-repeat 94% center; background-size:2.3438vw auto;
+			}
+			.section2 .btnarea_helf a:last-child {
+				margin-left:0; margin-top:1em;
+			}
+
+
+			
+			/* section4 */
+			.section4 .item_list dl {
+				margin-bottom:6.4516vw;
+			}
+			.section4 .item_list dl dt img {
+				width:21.2500vw;
+			}
+			.section4 .item_list dl dd .tit {
+				font-size:0.95em;
+			}
+			.section4 .item_list dl dd .info {
+				margin-top:0.8em; padding-top:0.9em;
+				font-size:0.8em; 
+			}
+			.section4 .card_list {
+				margin:9.6774vw auto 0;
+			}
+			.section4 .card_list .card_box .title {
+				padding:0.8em 0;
+				font-size:1.15em;
+			}
+			.section4 .card_list .card_box .detail dl dt .tit {
+				margin-top:0.5em;
+			}
+			.section4 .card_list .card_box .detail dl dd {
+				font-size:0.7em;
+			}
+
+			
+			/* footer */
+			.footer .txt {
+				font-size:0.9em;
+			}
+			.footer .tit {
+				font-size:1.6em;
+			}
+			.footer .btnarea a {
+				font-size:0.9em;
+			}
+			.footer .copyright {
+				font-size:0.7em; line-height:140%;
+			}
+			.footer .copyright em {
+				display:block;
+				font-size:0; line-height:1; text-indent:-9999;
+			}
+		}
+	</style>
+</head>
+
+
+
+<body>
+	<header>
+		<div class="bg">
+			<div class="inner">
+				<div class="logo_area">
+					<a href="https://www.lgcns.com/" target="_blank"><img src="./images/logo_lgcns.png" alt="LG CNS" /></a>
+				</div>
+				<div class="main_title">
+					<p>クラウド移行やインフラ更改時の、<br class="hbr" />エラーや不具合が心配ですか？</p>
+					<h1>PerfecTwin<span>(パーフェク トゥィン)</span>にお任せください！</h1>
+				</div>
+				<div class="detail">
+					PerfecTwinは、100%本番トランザクションをテストデータとして活用する<br />
+					「現/新 比較テスト自動化ソリューション」です。<br />
+					エラーや不具合のない、完璧なシステム移行を実現します。
+				</div>
+				<div class="btnarea">
+					<a href="mailto:hong-sp@lgcns.com"><span>お問い合わせはこちら</span></a>
+				</div>
+			</div>
+		</div>
+	</header>
+
+
+
+	<section class="section section2">
+		<div class="inner">
+			<div class="slist">
+				<ul>
+					<li>
+						<div class="box box_red">
+							<div class="icon"><img src="./images/icon2.png" alt="" /></div>
+							<div class="info">
+								<b>現/新システムの<br />自動比較テストが可能</b>
+							</div>
+						</div>
+					</li>					
+					<li>
+						<div class="box">
+							<div class="icon"><img src="./images/icon3.png" alt="" /></div>
+							<div class="info">
+								<b>本番トランザクションデータで<br />自動テストを実施</b>
+							</div>
+						</div>
+					</li>					
+					<li>
+						<div class="box">
+							<div class="icon"><img src="./images/icon4.png" alt="" /></div>
+							<div class="info">
+								<b>本番稼働前に潜在的な<br />エラーや不具合を検出</b>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="btnarea_helf">
+				<a href="https://www.youtube.com/watch?v=k7kt0IIWxwo" target="_blank"><span>PerfecTwin紹介動画</span></a>
+				<a href="https://solution.lgcns.com/jp/solution/perfectwin" target="_blank"><span>PerfecTwin紹介資料</span></a>
+			</div>
+			<div class="btnarea">
+				<a href="https://solution.lgcns.com/jp/solution/perfectwin" target="_blank"><span>メインホームページ</span></a>
+			</div>
+		</div>
+	</section>
+
+
+	
+
+	<section class="section section4">
+		<div class="inner">
+			<div class="item_list">
+				<dl>
+					<dt><img src="./images/icon5.png" alt="" /></dt>
+					<dd>
+						<div class="tit">
+							現行システムの本番トランザクションで、新システムとの【比較テストを自動化】
+						</div>
+						<div class="info">
+							現行システムからキャプチャされた大量のトランザクションを基盤として、新規システムでの全数テストを自動実施。さらに、結果を自動比較して、エラーや不具合を事前に検出します。
+						</div>
+
+					</dd>
+				</dl>
+				<dl>
+					<dt><img src="./images/icon6.png" alt="" /></dt>
+					<dd>
+						<div class="tit">
+							新システムの【性能検証を自動化】
+						</div>
+						<div class="info">
+							本番システムへの大量の同時アクセスを、新規システムで自動的に再現することで、
+							新規システムの性能検証の信頼性を高めます。
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt><img src="./images/icon7.png" alt="" /></dt>
+					<dd>
+						<div class="tit">
+							本番稼働の判定基準を[定量的検証数値で提供]
+						</div>
+						<div class="info">
+							本番稼働判定のための機能テスト、および性能安定性のテスト結果を、本番トランザクション単位の比較により定量的検証数値で提供。本番稼働に向けての信頼性を提供します。 
+						</div>
+					</dd>
+				</dl>	
+				<dl>
+					<dt><img src="./images/icon8.png" alt="" /></dt>
+					<dd>
+						<div class="tit">
+							[導入後のエラー発生率 0％]の高い信頼性
+						</div>
+						<div class="info">
+							クラウド移行、インフラ更改(U2L、DB更改)、SI、SM、ERP移行など大規模のインフラ更改構築で、<br />
+							エラー発生率0％を達成。約70社の導入顧客から、非常に高い評価をいただいています。
+						</div>
+					</dd>
+				</dl>
+			</div>
+
+			<div class="card_list">				
+				<div class="card_box card_box1">
+					<div class="title">
+						大手建設会社  S社<br />
+						クラウド移行
+					</div>
+					<div class="detail">
+						<dl>
+							<dt>
+								<img src="./images/icon_human.png" class="icon_h1" alt="" />
+								<div class="tit">お客様A</div>
+							</dt>
+							<dd>
+								「性能結果を比較確認することができ、システム本番稼働判定に役立ちました。」
+							</dd>
+						</dl>
+						<dl>
+							<dt>
+								<img src="./images/icon_human.png" class="icon_h1" alt="" />
+								<div class="tit">お客様B</div>
+							</dt>
+							<dd>
+								「システム本番稼働後に大きな問題なく、早期に安定的にシステムを運営することができたので、さっそく次の案件を準備しています。」
+							</dd>
+						</dl>
+						<dl>
+							<dt>
+								<img src="./images/icon_human2.png" class="icon_h2" alt="" />
+								<div class="tit">運用会社</div>
+							</dt>
+							<dd>
+								「本番稼働後のシステムリソースモニタリングの結果がPerfecTwinのテスト結果と同一であったため、お客様からの信頼も厚くなりました。」
+							</dd>
+						</dl>
+					</div>
+				</div>
+				
+				<div class="card_box card_box2">
+					<div class="title">
+						大手流通会社  C社<br />
+						クラウド移行
+					</div>
+					<div class="detail">
+						<dl>
+							<dt>
+								<img src="./images/icon_human.png" class="icon_h1" alt="" />
+								<div class="tit">お客様A</div>
+							</dt>
+							<dd>
+								「10年前からこのようなソリューションがあればいいと思っていましたが、本当にこのようなソリューションがあるとは想像できませんでした。」
+							</dd>
+						</dl>
+						<dl>
+							<dt>
+								<img src="./images/icon_human.png" class="icon_h1" alt="" />
+								<div class="tit">お客様B</div>
+							</dt>
+							<dd>
+								「開発者が定時に退社できることが増えました。従業員の働き方改革にも役立ちます。」
+							</dd>
+						</dl>
+						<dl>
+							<dt>
+								<img src="./images/icon_human2.png" class="icon_h2" alt="" />
+								<div class="tit">運用会社</div>
+							</dt>
+							<dd>
+								「運用と同時にテストができて、開発の完成度が非常に良くなりました。その上、性能まで検証してくれるので、導入しない理由がありません。」
+							</dd>
+						</dl>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+
+	
+	<section class="footer">
+		<div class="inner">
+			<div class="txt">
+				LG CNSが提供する、<br />
+				本番トランザクションによる現/新比較テスト自動化ソリューション
+			</div>
+			<div class="tit">
+				PerfecTwin
+			</div>
+			<div class="btnarea">
+				<a href="mailto:hong-sp@lgcns.com"><span>導入のご相談 / お問い合わせ</span></a>
+			</div>
+			<div class="copyright">
+				担当者：LG CNS Japan　洪 錫杓（ホン ソクピョ）<em>|</em> ※日本語にて対応いたします<br />
+				メールアドレス：hong-sp@lgcns.com <em>|</em> 電話番号：045-323-9069
+			</div>
+		</div>
+	</section>
+
+</div>
+<!-- //사이트 -->
+</body>
+</html>
